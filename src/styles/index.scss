@@ -134,6 +134,11 @@
   }
 }
 
+.message {
+  text-align: center;
+  margin: 1rem;
+}
+
 @media (max-width: 1000px) {
   .infos-container {
     flex-direction: column;

@@ -1,14 +1,18 @@
+// Hooks - useEffect et useState
 import { useEffect, useState } from 'react';
 
+// Composants
 import Header from './Header/Header';
 import Main from './Main/Main';
 
-// Import Interfaces TypeScript
+// Interfaces TypeScript
 import { Generation, PokemonData } from '../../@types';
 
+// SCSS
 import '../../styles/index.scss';
 
 function App() {
+  // Initialisation des states
   const [generationToFetch, setGenerationToFetch] = useState<
     number | undefined
   >(undefined);
@@ -44,6 +48,8 @@ function App() {
   }, []);
 
   // Appel API pour récupérer les datas des pokemons selon leur génération
+  // On note que le useEffect sera appelé uniquement au changement du state de generationToFetch (cf. tableau des dépendances)
+  // Ce dernier est changé au click sur un bouton de génération
   useEffect(() => {
     if (!generationToFetch) return;
     async function fetchData() {

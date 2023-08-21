@@ -1,9 +1,8 @@
+// Interface Typescript
 import { PokemonListProps } from '../../../@types';
 
 export default function PokemonList({ pokemonsData }: PokemonListProps) {
-  console.log('Composant liste');
-  console.log(pokemonsData[0]);
-
+  // Pour chaque pokemon compris dans les datas de pokemonsData alors je créer un élément JSX
   const items = pokemonsData.map((pokemon) => (
     <li key={pokemon.pokedexId} className="pokemon__card">
       <img

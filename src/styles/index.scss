@@ -32,36 +32,39 @@
 /* FORM */
 .form {
   margin-bottom: 1rem;
-}
 
-.input-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0 2rem 0;
-}
+  &__input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 2rem 0;
 
-.input-text {
-  position: relative;
-}
-input[type='text'] {
-  border-style: none;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  box-shadow: 0 1px 5px black;
-}
-input[type='text']:focus {
-  outline: 2px solid black;
-}
+    &-label {
+    }
 
-.bi-search {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  color: black;
-  cursor: pointer;
+    .form__input-text {
+      position: relative;
+    }
+    input[type='text'] {
+      border-style: none;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      box-shadow: 0 1px 5px black;
+    }
+    input[type='text']:focus {
+      outline: 2px solid black;
+    }
+
+    .bi-search {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: black;
+      cursor: pointer;
+    }
+  }
 }
 
 /* LIST */
@@ -106,31 +109,31 @@ input[type='text']:focus {
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1rem 0;
-}
 
-.generation__btn {
-  cursor: pointer;
-  background-color: v.$white;
-  border-style: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 5px black;
-  color: v.$card-bg;
-  font-family: 'Bree serif', sans-serif;
-  font-size: 1.25rem;
-  transition: 150ms;
-}
+  .generation__btn {
+    cursor: pointer;
+    background-color: v.$white;
+    border-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 5px black;
+    color: v.$card-bg;
+    font-family: 'Bree serif', sans-serif;
+    font-size: 1.25rem;
+    transition: 150ms;
 
-.generation__btn:hover {
-  background-color: v.$card-bg;
-  color: v.$white;
-  transform: scale(1.05);
-}
+    &:hover {
+      background-color: v.$card-bg;
+      color: v.$white;
+      transform: scale(1.05);
+    }
+  }
 
-.btn--active {
-  background-color: v.$card-bg;
-  color: v.$white;
-  transform: scale(1.05);
+  .btn--active {
+    background-color: v.$card-bg;
+    color: v.$white;
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 1000px) {

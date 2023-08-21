@@ -1,9 +1,13 @@
-import logo from '../../assets/logo.svg';
+import Header from './Header/Header';
 
-import './App.scss';
+import '../../styles/index.scss';
 
 function App() {
-  return <div className="App" />;
+  return (
+    <div className="App">
+      <Header />
+    </div>
+  );
 }
 
 export default App;

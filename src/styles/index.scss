@@ -1,15 +1,8 @@
 @use 'reset';
 @use 'variables' as v;
 
-/* VARIABLES */
-:root {
-  --background-color: #c14040;
-  --card-bg: #982c2c;
-  --white: #efe3e3;
-}
-
 /* GENERAL */
-.container {
+.App {
   background-color: v.$background-color;
   min-height: 100vh;
   max-width: 100vw;
@@ -19,16 +12,16 @@
   font-size: 1.1rem;
 }
 
-/* HEADER */
 .header {
   background-color: v.$white;
   color: v.$background-color;
 
   padding: 1.5rem 2rem;
   border-radius: 2rem;
-}
-.header__title {
-  font-size: 3rem;
+
+  &__title {
+    font-size: 3rem;
+  }
 }
 
 /* MAIN */

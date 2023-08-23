@@ -26,6 +26,8 @@ export interface PokemonData {
   weight: string;
 }
 
+// PROPS
+
 // Pas forcément nécessaire de faire une interface pour les MainProps mais on anticipe plus de props
 export interface MainProps {
   generationBtns: Generation[];
@@ -45,4 +47,13 @@ export interface GenerationBtnsProps {
 
 export interface PokemonListProps {
   pokemonsData: PokemonData[];
+}
+
+export interface ModalProps {
+  closeModal: MouseEventHandler<HTMLDivElement>;
+  pokemon: PokemonData;
+}
+
+export interface ModalListItemProps {
+  stat: [string, number];
 }

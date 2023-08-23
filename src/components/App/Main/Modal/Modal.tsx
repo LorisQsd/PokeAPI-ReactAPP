@@ -1,12 +1,13 @@
 // SCSS
 import './modal.scss';
 
-interface ModalProps {
-  // Je n'ai pas encore trouver le type à attribuer
-  closeModal: React.DOMAttributes<HTMLDivElement>;
-}
+// Composants
+import ModalListItem from './ModalListItem';
 
-export default function Modal({ closeModal }: ModalProps) {
+import { ModalProps } from '../../../../@types';
+
+export default function Modal({ closeModal, pokemon }: ModalProps) {
+  const stats = [pokemon.stats].map((obj) => [...Object.entries(obj)]);
   return (
     <div className="modal" onClick={closeModal}>
       <div className="modal__content" onClick={(e) => e.stopPropagation()}>
@@ -17,12 +18,14 @@ export default function Modal({ closeModal }: ModalProps) {
 
         <div className="modal__content-infos">
           <img
-            src="https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/154/regular.png"
-            alt=""
+            src={pokemon.sprites.regular}
+            alt={pokemon.name.fr}
             className="infos__img"
           />
           <div className="infos__right">
-            <h3 className="infos__right-subtitle">#154 Méganium</h3>
+            <h3 className="infos__right-subtitle">
+              #{pokemon.pokedexId} {pokemon.name.fr}
+            </h3>
             <div className="types-container">
               <p className="type__paragraph plante">Plante</p>
             </div>
@@ -30,36 +33,9 @@ export default function Modal({ closeModal }: ModalProps) {
             <h4 className="stats__title">Statitistiques</h4>
 
             <ul className="stats__list">
-              <li className="stats__list-item">
-                <span>hp</span>
-                <span>80</span>
-                <div className="progress-bar">
-                  <div
-                    className="progress-bar--prog"
-                    style={{ width: '31%' }}
-                  ></div>
-                </div>
-              </li>
-              <li className="stats__list-item">
-                <span>hp</span>
-                <span>80</span>
-                <div className="progress-bar">
-                  <div
-                    className="progress-bar--prog"
-                    style={{ width: '31%' }}
-                  ></div>
-                </div>
-              </li>
-              <li className="stats__list-item">
-                <span>hp</span>
-                <span>80</span>
-                <div className="progress-bar">
-                  <div
-                    className="progress-bar--prog"
-                    style={{ width: '31%' }}
-                  ></div>
-                </div>
-              </li>
+              {stats[0].map((stat) => (
+                <ModalListItem stat={stat} />
+              ))}
             </ul>
           </div>
         </div>

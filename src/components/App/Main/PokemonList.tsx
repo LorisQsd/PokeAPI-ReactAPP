@@ -1,5 +1,5 @@
 // Interface Typescript
-import { PokemonListProps } from '../../../@types';
+import { PokemonListProps, PokemonData } from '../../../@types';
 
 // Composants
 import { useState } from 'react';
@@ -8,13 +8,20 @@ import Modal from './Modal/Modal';
 
 export default function PokemonList({ pokemonsData }: PokemonListProps) {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [pokemon, setPokemon] = useState<PokemonData | null>(null);
+
+  function handleClick(id: number) {
+    setShowModal(true);
+    const pokemon = pokemonsData.find((pokemon) => pokemon.pokedexId === id);
+    setPokemon(pokemon as PokemonData);
+  }
 
   // Pour chaque pokemon compris dans les datas de pokemonsData alors je créer un élément JSX
   const items = pokemonsData.map((pokemon) => (
     <li
       key={pokemon.pokedexId}
       className="pokemon__card"
-      onClick={() => setShowModal(true)}
+      onClick={() => handleClick(pokemon.pokedexId)}
     >
       <img
         src={pokemon.sprites.regular}
@@ -31,7 +38,10 @@ export default function PokemonList({ pokemonsData }: PokemonListProps) {
       <ul className="pokemon__list">{items}</ul>;
       {showModal &&
         createPortal(
-          <Modal closeModal={() => setShowModal(false)} />,
+          <Modal
+            closeModal={() => setShowModal(false)}
+            pokemon={pokemon as PokemonData}
+          />,
           document.body
         )}
     </>

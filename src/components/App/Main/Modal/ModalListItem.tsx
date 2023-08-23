@@ -8,7 +8,7 @@ export default function ModalListItem({ stat }: ModalListItemProps) {
     <li key={nanoid(8)} className="stats__list-item">
       <span>{stat[0]}</span>
       <span>{stat[1]}</span>
-      <div className="progress-bar">
+      <div className="progress-bar grow">
         <div className="progress-bar--prog" style={{ width: width }}></div>
       </div>
     </li>

@@ -1,5 +1,7 @@
 // SCSS
 import './modal.scss';
+import './typesColor.scss';
+import './mqueries.scss';
 
 // Composants
 import ModalListItem from './ModalListItem';
@@ -8,9 +10,13 @@ import { ModalProps } from '../../../../@types';
 
 export default function Modal({ closeModal, pokemon }: ModalProps) {
   const stats = [pokemon.stats].map((obj) => [...Object.entries(obj)]);
+  console.log(pokemon);
   return (
     <div className="modal" onClick={closeModal}>
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="modal__content slide"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button onClick={closeModal} className="modal__content-btn--close">
           X
         </button>
@@ -27,7 +33,11 @@ export default function Modal({ closeModal, pokemon }: ModalProps) {
               #{pokemon.pokedexId} {pokemon.name.fr}
             </h3>
             <div className="types-container">
-              <p className="type__paragraph plante">Plante</p>
+              {pokemon.types.map((type: { name: string }) => (
+                <p className={'type__paragraph ' + type.name.toLowerCase()}>
+                  {type.name}
+                </p>
+              ))}
             </div>
 
             <h4 className="stats__title">Statitistiques</h4>

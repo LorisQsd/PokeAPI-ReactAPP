@@ -13,7 +13,7 @@ export default function Main({
 }: MainProps) {
   return (
     <main className="main">
-      <Form />
+      {/* <Form /> */}
       {/* Si ma liste de bouton de génération a au moins un élément alors je peux afficher mon composant sinon j'affiche un message d'erreur */}
       {generationBtns.length ? (
         <GenerationBtns

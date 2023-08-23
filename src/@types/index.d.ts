@@ -37,7 +37,6 @@ export interface MainProps {
   setPokemonsData: React.Dispatch<React.SetStateAction<PokemonData[]>>;
 }
 
-// Same here
 export interface GenerationBtnsProps {
   generationBtns: Generation[];
   setGenerationToFetch: React.Dispatch<

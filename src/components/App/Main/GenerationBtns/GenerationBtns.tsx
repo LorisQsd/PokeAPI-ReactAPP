@@ -1,5 +1,8 @@
 // Interfaces Typescript
-import { GenerationBtnsProps, Generation } from '../../../@types';
+import { GenerationBtnsProps, Generation } from '../../../../@types';
+
+// SCSS
+import './generationBtns.scss';
 
 export default function GenerationBtns({
   generationBtns,

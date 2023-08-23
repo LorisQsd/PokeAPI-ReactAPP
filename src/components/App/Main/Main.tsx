@@ -1,6 +1,6 @@
 // Composants
-import GenerationBtns from './GenerationBtns';
-import PokemonList from './PokemonList';
+import GenerationBtns from './GenerationBtns/GenerationBtns';
+import PokemonList from './PokemonList/PokemonList';
 
 // Interface TypeScript
 import { MainProps } from '../../../@types';

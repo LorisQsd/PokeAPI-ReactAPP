@@ -1,10 +1,13 @@
 // Composants
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import Modal from './Modal/Modal';
+import Modal from '../Modal/Modal';
 
 // Interface Typescript
-import { PokemonListProps, PokemonData } from '../../../@types';
+import { PokemonListProps, PokemonData } from '../../../../@types';
+
+// SCSS
+import './pokemonList.scss';
 
 export default function PokemonList({
   pokemonsData,

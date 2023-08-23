@@ -1,0 +1,34 @@
+@use '../../../../styles/variables' as v;
+
+.pokemon__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pokemon__card {
+  background-color: v.$card-bg;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: transform 300ms;
+  cursor: pointer;
+}
+
+.pokemon__card:hover {
+  transform: scale(1.05);
+}
+
+.card__img {
+  width: 80%;
+}
+
+.card__title {
+  font-size: 1.2rem;
+}

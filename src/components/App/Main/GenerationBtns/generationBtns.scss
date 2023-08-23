@@ -1,0 +1,35 @@
+@use '../../../../styles/variables' as v;
+
+.generation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .generation__btn {
+    cursor: pointer;
+    background-color: v.$white;
+    border-style: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 5px black;
+    color: v.$card-bg;
+    font-family: 'Bree serif', sans-serif;
+    font-size: 1.25rem;
+    transition: 150ms;
+
+    &:hover {
+      background-color: v.$card-bg;
+      color: v.$white;
+      transform: scale(1.05);
+    }
+  }
+
+  .btn--active {
+    background-color: v.$card-bg;
+    color: v.$white;
+    transform: scale(1.05);
+  }
+}

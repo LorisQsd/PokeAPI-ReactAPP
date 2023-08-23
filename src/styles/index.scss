@@ -12,127 +12,13 @@
   font-size: 1.1rem;
 }
 
-.header {
-  background-color: v.$white;
-  color: v.$background-color;
-
-  padding: 1.5rem 2rem;
-  border-radius: 2rem;
-
-  &__title {
-    font-size: 3rem;
-  }
-}
-
 /* MAIN */
 .main {
   padding: 1rem 0;
   width: 100%;
 }
-/* FORM */
-.form {
-  margin-bottom: 1rem;
 
-  &__input-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0 2rem 0;
-
-    .form__input-text {
-      position: relative;
-    }
-    input[type='text'] {
-      border-style: none;
-      border-radius: 1rem;
-      padding: 0.5rem;
-      box-shadow: 0 1px 5px black;
-    }
-    input[type='text']:focus {
-      outline: 2px solid black;
-    }
-
-    .bi-search {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      color: black;
-      cursor: pointer;
-    }
-  }
-}
-
-/* LIST */
-.pokemon__list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.pokemon__card {
-  background-color: v.$card-bg;
-  border-radius: 1.5rem;
-  padding: 1rem;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  transition: transform 300ms;
-  cursor: pointer;
-}
-
-.pokemon__card:hover {
-  transform: scale(1.05);
-}
-
-.card__img {
-  width: 80%;
-}
-
-.card__title {
-  font-size: 1.2rem;
-}
-
-/* GENERATIONS BUTTONS */
-.generation-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
-
-  .generation__btn {
-    cursor: pointer;
-    background-color: v.$white;
-    border-style: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 5px black;
-    color: v.$card-bg;
-    font-family: 'Bree serif', sans-serif;
-    font-size: 1.25rem;
-    transition: 150ms;
-
-    &:hover {
-      background-color: v.$card-bg;
-      color: v.$white;
-      transform: scale(1.05);
-    }
-  }
-
-  .btn--active {
-    background-color: v.$card-bg;
-    color: v.$white;
-    transform: scale(1.05);
-  }
-}
+/* Utils */
 
 .loader {
   display: block;
@@ -162,15 +48,5 @@
     background-color: v.$card-bg;
     color: v.$white;
     transform: scale(1.05);
-  }
-}
-
-@media (max-width: 1000px) {
-  .infos-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .modal__subtitle {
-    text-align: center;
   }
 }

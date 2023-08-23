@@ -13,7 +13,7 @@ export default function Form() {
             className="form__input-text-search"
             placeholder="123"
           />
-          <i className="bi bi-search"></i>
+          <i className="bi bi-search" />
         </div>
       </fieldset>
     </form>

@@ -1,5 +1,4 @@
 // Composants
-import Form from './Form';
 import GenerationBtns from './GenerationBtns';
 import PokemonList from './PokemonList';
 

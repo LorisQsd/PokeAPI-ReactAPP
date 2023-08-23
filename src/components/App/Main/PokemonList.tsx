@@ -1,10 +1,10 @@
-// Interface Typescript
-import { PokemonListProps, PokemonData } from '../../../@types';
-
 // Composants
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import Modal from './Modal/Modal';
+
+// Interface Typescript
+import { PokemonListProps, PokemonData } from '../../../@types';
 
 export default function PokemonList({
   pokemonsData,
@@ -15,30 +15,49 @@ export default function PokemonList({
 
   function handleClick(id: number) {
     setShowModal(true);
-    const pokemon = pokemonsData.find((pokemon) => pokemon.pokedexId === id);
-    setPokemon(pokemon as PokemonData);
+    const filteredPokemon = pokemonsData.find(
+      (pokemonData) => pokemonData.pokedexId === id
+    );
+    setPokemon(filteredPokemon as PokemonData);
+  }
+
+  function handleKeyDown(
+    event: React.KeyboardEvent<HTMLDivElement>,
+    id: number
+  ) {
+    if (event.code === 'Enter') {
+      handleClick(id);
+    }
   }
 
   // Pour chaque pokemon compris dans les datas de pokemonsData alors je créer un élément JSX
-  const items = pokemonsData.map((pokemon) => (
-    <li
-      key={pokemon.pokedexId}
-      className="pokemon__card"
-      onClick={() => handleClick(pokemon.pokedexId)}
+  const items = pokemonsData.map((pokemonData) => (
+    <div
+      role="tablist"
+      key={pokemonData.pokedexId}
+      onClick={() => handleClick(pokemonData.pokedexId)}
+      onKeyDown={(event) => handleKeyDown(event, pokemonData.pokedexId)}
+      tabIndex={0}
     >
-      <img
-        src={pokemon.sprites.regular}
-        alt={pokemon.name.fr}
-        className="card__img"
-      />
-      <h2 className="card__title">
-        #{pokemon.pokedexId} {pokemon.name.fr}
-      </h2>
-    </li>
+      <li className="pokemon__card">
+        <img
+          src={pokemonData.sprites.regular}
+          alt={pokemonData.name.fr}
+          className="card__img"
+        />
+        <h2 className="card__title">
+          #{pokemonData.pokedexId} {pokemonData.name.fr}
+        </h2>
+      </li>
+    </div>
   ));
   return (
     <>
-      <button className="refresh-list-btn" onClick={() => setPokemonsData([])}>
+      <button
+        type="button"
+        className="refresh-list-btn"
+        onClick={() => setPokemonsData([])}
+      >
         Vider la liste
       </button>
       <ul className="pokemon__list">{items}</ul>

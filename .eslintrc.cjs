@@ -29,7 +29,7 @@ module.exports = {
   ],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    // "prettier/prettier": "off",
+    'prettier/prettier': 'off',
     'react/react-in-jsx-scope': 0,
     'react/jsx-filename-extension': [
       2,

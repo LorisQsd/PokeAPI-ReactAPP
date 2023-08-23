@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: center;
   font-family: 'Bree Serif', sans-serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
 
   &__content {
     background-color: v.$white;

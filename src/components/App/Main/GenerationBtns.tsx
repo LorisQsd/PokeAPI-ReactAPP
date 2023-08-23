@@ -14,6 +14,7 @@ export default function GenerationBtns({
   // NOTE : Il n'y a pas d'ID durable dans le temps, ici la key fait référence à la génération => amélioration à faire côté API
   const items = generationBtns.map((btn) => (
     <button
+      type="button"
       key={btn.generation}
       className="generation__btn"
       onClick={() => handleClickGenerationBtn(btn)}

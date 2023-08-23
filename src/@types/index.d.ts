@@ -28,10 +28,6 @@ export interface PokemonData {
 
 // PROPS
 
-export interface LoaderProps {
-  isLoading: Boolean;
-}
-
 export interface MainProps {
   generationBtns: Generation[];
   setGenerationToFetch: React.Dispatch<

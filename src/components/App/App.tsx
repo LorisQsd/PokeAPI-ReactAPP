@@ -4,15 +4,13 @@ import { useEffect, useState } from 'react';
 // Composants
 import Header from './Header/Header';
 import Main from './Main/Main';
+import Loader from './Loader';
 
 // Interfaces TypeScript
 import { Generation, PokemonData } from '../../@types';
 
 // SCSS
 import '../../styles/index.scss';
-
-// Assets
-import Loader from '../../assets/spinning-circles.svg';
 
 function App() {
   // Initialisation des states
@@ -45,6 +43,7 @@ function App() {
 
         setIsLoading(false);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.trace(error);
       }
     }
@@ -77,6 +76,7 @@ function App() {
 
         setIsLoading(false);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.trace(error);
       }
     }
@@ -93,7 +93,7 @@ function App() {
         pokemonsData={pokemonsData}
         setPokemonsData={setPokemonsData}
       />
-      {isLoading && <img src={Loader} alt="Loader" className="loader" />}
+      {isLoading && <Loader />}
     </div>
   );
 }

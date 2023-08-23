@@ -11,6 +11,9 @@ import { Generation, PokemonData } from '../../@types';
 // SCSS
 import '../../styles/index.scss';
 
+// Assets
+import Loader from '../../assets/spinning-circles.svg';
+
 function App() {
   // Initialisation des states
   const [generationToFetch, setGenerationToFetch] = useState<
@@ -18,9 +21,11 @@ function App() {
   >(undefined);
   const [pokemonsData, setPokemonsData] = useState<PokemonData[]>([]);
   const [generationBtns, setGenerationBtns] = useState<Generation[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Appel API pour création des boutons de génération
   useEffect(() => {
+    setIsLoading(true);
     async function fetchData() {
       try {
         const response = await fetch(
@@ -38,7 +43,7 @@ function App() {
 
         setGenerationBtns(typedData);
 
-        console.log('Data des boutons de génération récupérée !');
+        setIsLoading(false);
       } catch (error) {
         console.trace(error);
       }
@@ -52,6 +57,7 @@ function App() {
   // Ce dernier est changé au click sur un bouton de génération
   useEffect(() => {
     if (!generationToFetch) return;
+    setIsLoading(true);
     async function fetchData() {
       try {
         const response = await fetch(
@@ -69,7 +75,7 @@ function App() {
 
         setPokemonsData(typedData);
 
-        console.log('Data des pokemons récupéré !');
+        setIsLoading(false);
       } catch (error) {
         console.trace(error);
       }
@@ -85,7 +91,9 @@ function App() {
         generationBtns={generationBtns}
         setGenerationToFetch={setGenerationToFetch}
         pokemonsData={pokemonsData}
+        setPokemonsData={setPokemonsData}
       />
+      {isLoading && <img src={Loader} alt="Loader" className="loader" />}
     </div>
   );
 }

@@ -4,7 +4,7 @@ export interface Generation {
   to: number;
 }
 
-// Flemme de finir de tout typer
+// Typage incomplet => A compléter si utilisation de données non présente dans l'interface actuelle
 export interface PokemonData {
   catch_rate: number;
   category: string;
@@ -28,13 +28,17 @@ export interface PokemonData {
 
 // PROPS
 
-// Pas forcément nécessaire de faire une interface pour les MainProps mais on anticipe plus de props
+export interface LoaderProps {
+  isLoading: Boolean;
+}
+
 export interface MainProps {
   generationBtns: Generation[];
   setGenerationToFetch: React.Dispatch<
     React.SetStateAction<number | undefined>
   >;
   pokemonsData: PokemonData[];
+  setPokemonsData: React.Dispatch<React.SetStateAction<PokemonData[]>>;
 }
 
 // Same here
@@ -47,6 +51,7 @@ export interface GenerationBtnsProps {
 
 export interface PokemonListProps {
   pokemonsData: PokemonData[];
+  setPokemonsData: React.Dispatch<React.SetStateAction<PokemonData[]>>;
 }
 
 export interface ModalProps {

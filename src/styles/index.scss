@@ -134,9 +134,35 @@
   }
 }
 
+.loader {
+  display: block;
+  margin: auto;
+}
+
 .message {
   text-align: center;
   margin: 1rem;
+}
+
+.refresh-list-btn {
+  cursor: pointer;
+  background-color: v.$white;
+  border-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 5px black;
+  color: v.$card-bg;
+  font-family: 'Bree serif', sans-serif;
+  font-size: 1.25rem;
+  transition: 150ms;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+
+  &:hover {
+    background-color: v.$card-bg;
+    color: v.$white;
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: 1000px) {

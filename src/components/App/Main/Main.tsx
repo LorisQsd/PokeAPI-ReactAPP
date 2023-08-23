@@ -10,6 +10,7 @@ export default function Main({
   generationBtns,
   setGenerationToFetch,
   pokemonsData,
+  setPokemonsData,
 }: MainProps) {
   return (
     <main className="main">
@@ -25,7 +26,10 @@ export default function Main({
       )}
       {/* Si mon state pokemonsData comprend au moins un pokemon c'est qu'il y a eu appel API, donc je peux afficher mon composant PokemonList */}
       {pokemonsData.length ? (
-        <PokemonList pokemonsData={pokemonsData} />
+        <PokemonList
+          pokemonsData={pokemonsData}
+          setPokemonsData={setPokemonsData}
+        />
       ) : (
         <p className="message">
           Clique sur une génération pour afficher la liste de tes pokémons

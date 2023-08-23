@@ -6,7 +6,10 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import Modal from './Modal/Modal';
 
-export default function PokemonList({ pokemonsData }: PokemonListProps) {
+export default function PokemonList({
+  pokemonsData,
+  setPokemonsData,
+}: PokemonListProps) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [pokemon, setPokemon] = useState<PokemonData | null>(null);
 
@@ -35,7 +38,10 @@ export default function PokemonList({ pokemonsData }: PokemonListProps) {
   ));
   return (
     <>
-      <ul className="pokemon__list">{items}</ul>;
+      <button className="refresh-list-btn" onClick={() => setPokemonsData([])}>
+        Vider la liste
+      </button>
+      <ul className="pokemon__list">{items}</ul>
       {showModal &&
         createPortal(
           <Modal

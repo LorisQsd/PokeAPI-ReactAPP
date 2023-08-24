@@ -24,48 +24,50 @@ export default function Modal({ closeModal, pokemon }: ModalProps) {
   return (
     // Début de rendu de modal accessible
     <dialog
-      className="modal"
+      className="fixed inset-0 bg-black/60 flex items-center justify-center font-bree m-0 w-screen h-screen border-none"
       onClick={closeModal}
       onKeyDown={(event) => handleKeyDown(event)}
     >
       <div
-        className="modal__content slide"
+        className="bg-slate-100 max-w-7xl relative px-8 py-9 rounded-xl shadow-3xl slide"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
       >
         <button
           type="button"
           onClick={closeModal}
-          className="modal__content-btn--close"
+          className="absolute top-3 right-3 w-6 h-6 rounded-sm bg-red-600 text-slate-100 font-sans transition hover:bg-red-700"
         >
           X
         </button>
-        <h2 className="modal__content-title">Détails du Pokemon</h2>
+        <h2 className="text-3xl text-v-red-100 text-center">
+          Détails du Pokemon
+        </h2>
 
-        <div className="modal__content-infos">
+        <div className="flex gap-4 max-lg:flex-col max-lg:items-center">
           <img
             src={pokemon.sprites.regular}
             alt={pokemon.name.fr}
-            className="infos__img"
+            className="w-1/2"
           />
-          <div className="infos__right">
-            <h3 className="infos__right-subtitle">
+          <div className="py-4 flex flex-col justify-center gap-2 w-full">
+            <h3 className="text-2xl max-lg:text-center">
               #{pokemon.pokedexId} {pokemon.name.fr}
             </h3>
-            <div className="types-container">
+            <div className="flex gap-2">
               {pokemon.types.map((type: { name: string }) => (
                 <p
                   key={nanoid(8)}
-                  className={`type__paragraph ${type.name.toLowerCase()}`}
+                  className={`w-fit py-1 px-2 rounded text-slate-100 ${type.name.toLowerCase()}`}
                 >
                   {type.name}
                 </p>
               ))}
             </div>
 
-            <h4 className="stats__title">Statitistiques</h4>
+            <h4 className="text-xl m-1">Statitistiques</h4>
 
-            <ul className="stats__list">
+            <ul className="flex flex-col gap-2">
               {stats[0].map((stat) => (
                 <ModalListItem key={nanoid(8)} stat={stat} />
               ))}

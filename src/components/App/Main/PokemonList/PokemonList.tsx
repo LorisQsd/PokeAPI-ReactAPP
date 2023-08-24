@@ -6,9 +6,6 @@ import Modal from '../Modal/Modal';
 // Interface Typescript
 import { PokemonListProps, PokemonData } from '../../../../@types';
 
-// SCSS
-import './pokemonList.scss';
-
 export default function PokemonList({
   pokemonsData,
   setPokemonsData,
@@ -42,13 +39,13 @@ export default function PokemonList({
       onKeyDown={(event) => handleKeyDown(event, pokemonData.pokedexId)}
       tabIndex={0}
     >
-      <li className="pokemon__card">
+      <li className="bg-v-red-200 rounded-xl p-4 w-48 flex justify-center items-center flex-col gap-4 cursor-pointer transition duration-300 hover:scale-105">
         <img
           src={pokemonData.sprites.regular}
           alt={pokemonData.name.fr}
-          className="card__img"
+          className="w-5/6"
         />
-        <h2 className="card__title">
+        <h2 className="text-md">
           #{pokemonData.pokedexId} {pokemonData.name.fr}
         </h2>
       </li>
@@ -63,7 +60,9 @@ export default function PokemonList({
       >
         Vider la liste
       </button>
-      <ul className="pokemon__list">{items}</ul>
+      <ul className="flex justify-center items-center gap-4 flex-wrap">
+        {items}
+      </ul>
       {showModal &&
         createPortal(
           <Modal

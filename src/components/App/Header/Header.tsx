@@ -3,8 +3,8 @@ import './header.scss';
 
 export default function Header() {
   return (
-    <header className="header">
-      <h1 className="header__title">
+    <header className="rounded-2xl px-5 py-3 bg-slate-100 text-v-red-100">
+      <h1 className="text-5xl mb-1">
         <a
           href="https://github.com/LorisQsd/PokeAPI-ReactAPP"
           target="_blank"

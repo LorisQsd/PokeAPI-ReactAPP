@@ -23,7 +23,6 @@ export default function GenerationBtns({
       </button>
     </li>
   ));
-
   return (
     <ul className="flex gap-4 flex-wrap items-center justify-center my-4 mx-0">
       {items}

@@ -31,5 +31,5 @@ export interface ModalProps {
 }
 
 export interface ModalListItemProps {
-  stat: [string, number];
+  stat: [string, number | unkown];
 }

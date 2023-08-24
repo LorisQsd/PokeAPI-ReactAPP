@@ -4,7 +4,8 @@ import { createPortal } from 'react-dom';
 import Modal from '../Modal/Modal';
 
 // Interface Typescript
-import { PokemonListProps, PokemonData } from '../../../../@types';
+import { PokemonListProps } from '../../../../@types';
+import { PokemonData } from '../../../../@types/pokemon';
 
 export default function PokemonList({
   pokemonsData,

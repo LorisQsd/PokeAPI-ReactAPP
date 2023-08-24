@@ -4,30 +4,6 @@ export interface Generation {
   to: number;
 }
 
-// Typage incomplet => A compléter si utilisation de données non présente dans l'interface actuelle
-export interface PokemonData {
-  catch_rate: number;
-  category: string;
-  egg_groups: [];
-  generation: number;
-  height: string;
-  name: { fr: string; en: string; jp: string };
-  pokedexId: number;
-  sprites: { regular: string; shiny: string };
-  stats: {
-    hp: number;
-    atk: number;
-    def: number;
-    spe_atk: number;
-    spe_def: number;
-    vit: number;
-  };
-  types: [];
-  weight: string;
-}
-
-// PROPS
-
 export interface MainProps {
   generationBtns: Generation[];
   setGenerationToFetch: React.Dispatch<

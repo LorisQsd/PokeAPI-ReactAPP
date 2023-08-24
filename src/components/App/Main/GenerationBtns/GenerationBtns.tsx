@@ -16,7 +16,7 @@ export default function GenerationBtns({
     <li key={btn.generation}>
       <button
         type="button"
-        className="shadow-3xl bg-slate-100 text-v-red-100 p-2 rounded-md text-xl transition duration-300 hover:bg-v-red-200 hover:text-slate-100 hover:scale-105"
+        className="p-2 text-xl transition duration-300 rounded-md shadow-3xl bg-slate-100 text-v-red-100 hover:bg-v-red-200 hover:text-slate-100 hover:scale-105"
         onClick={() => handleClickGenerationBtn(btn)}
       >
         Génération {btn.generation}
@@ -24,7 +24,7 @@ export default function GenerationBtns({
     </li>
   ));
   return (
-    <ul className="flex gap-4 flex-wrap items-center justify-center my-4 mx-0">
+    <ul className="flex flex-wrap items-center justify-center gap-4 mx-0 my-4">
       {items}
     </ul>
   );

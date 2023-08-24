@@ -1,7 +1,7 @@
 export default function Header() {
   return (
-    <header className="rounded-2xl px-5 py-3 bg-slate-100 text-v-red-100">
-      <h1 className="text-5xl mb-1">
+    <header className="px-5 py-3 rounded-2xl bg-slate-100 text-v-red-100">
+      <h1 className="mb-1 text-5xl">
         <a
           href="https://github.com/LorisQsd/PokeAPI-ReactAPP"
           target="_blank"

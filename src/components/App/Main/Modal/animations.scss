@@ -1,5 +1,4 @@
-@use '../../../../styles/variables' as v;
-
+// SLIDE ANIMATION
 .slide {
   animation: 0.5s ease-in-out forwards slide;
 }
@@ -15,6 +14,7 @@
   }
 }
 
+// GROW ANIMATION
 .grow {
   overflow: hidden;
   animation: 0.5s ease-in-out forwards grow;

@@ -10,7 +10,7 @@ export default function ModalListItem({ stat }: ModalListItemProps) {
       <span className="w-3/12">{stat[1]}</span>
       <div className="w-[255px] h-[25px] rounded-md bg-v-red-200 overflow-hidden relative border-[3px] border-solid border-v-red-200">
         <div
-          className="absolute left-0 top-0 h-full bg-slate-100 grow"
+          className="absolute top-0 left-0 h-full bg-slate-100 grow"
           style={{ width }}
         />
       </div>

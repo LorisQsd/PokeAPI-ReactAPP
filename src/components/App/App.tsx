@@ -7,7 +7,9 @@ import Main from './Main/Main';
 import Loader from './Loader';
 
 // Interfaces TypeScript
-import { Generation, PokemonData } from '../../@types';
+import { Generation } from '../../@types';
+import { PokemonData } from '../../@types/pokemon';
+
 
 function App() {
   // Initialisation des states
@@ -82,7 +84,7 @@ function App() {
   }, [generationToFetch]);
 
   return (
-    <div className="min-h-screen max-w-screen font-bree bg-v-red-100 text-slate-100 px-4 py-10 text-lg">
+    <div className="min-h-screen px-4 py-10 text-lg max-w-screen font-bree bg-v-red-100 text-slate-100">
       <Header />
       <Main
         generationBtns={generationBtns}

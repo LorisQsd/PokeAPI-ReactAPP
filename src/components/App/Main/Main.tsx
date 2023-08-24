@@ -13,7 +13,7 @@ export default function Main({
   setPokemonsData,
 }: MainProps) {
   return (
-    <main className="py-3 w-full">
+    <main className="w-full py-3">
       {/* <Form /> */}
       {/* Si ma liste de bouton de génération a au moins un élément alors je peux afficher mon composant sinon j'affiche un message d'erreur */}
       {generationBtns.length ? (

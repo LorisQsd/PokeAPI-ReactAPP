@@ -6,4 +6,5 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   indentStyle: 'space',
+  plugins: [require('prettier-plugin-tailwindcss')],
 };

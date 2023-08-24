@@ -1,5 +1,6 @@
 /* eslint-env node */
 module.exports = {
+  ignorePatterns: ['postcss.config.js'],
   env: {
     browser: true,
     es2021: true,

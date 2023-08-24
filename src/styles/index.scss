@@ -1,21 +1,7 @@
 @use 'reset';
 @use 'variables' as v;
 
-/* GENERAL */
-
-/* MAIN */
-.main {
-  padding: 1rem 0;
-  width: 100%;
-}
-
 /* Utils */
-
-.message {
-  text-align: center;
-  margin: 1rem;
-}
-
 .refresh-list-btn {
   cursor: pointer;
   background-color: v.$white;

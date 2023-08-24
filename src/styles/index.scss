@@ -2,15 +2,6 @@
 @use 'variables' as v;
 
 /* GENERAL */
-.App {
-  background-color: v.$background-color;
-  min-height: 100vh;
-  max-width: 100vw;
-  color: v.$white;
-  padding: 2.5rem 1rem;
-  font-family: 'Bree Serif', sans-serif;
-  font-size: 1.1rem;
-}
 
 /* MAIN */
 .main {

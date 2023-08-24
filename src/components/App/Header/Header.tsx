@@ -1,6 +1,3 @@
-// SCSS
-import './header.scss';
-
 export default function Header() {
   return (
     <header className="rounded-2xl px-5 py-3 bg-slate-100 text-v-red-100">

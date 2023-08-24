@@ -85,7 +85,7 @@ function App() {
   }, [generationToFetch]);
 
   return (
-    <div className="App">
+    <div className="min-h-screen max-w-screen font-bree bg-v-red-100 text-slate-100 px-4 py-10 text-lg">
       <Header />
       <Main
         generationBtns={generationBtns}

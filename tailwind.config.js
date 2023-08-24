@@ -2,6 +2,9 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      bree: ['Bree Serif', 'sans-serif'],
+    },
     extend: {
       colors: {
         'v-red-100': '#c14040',

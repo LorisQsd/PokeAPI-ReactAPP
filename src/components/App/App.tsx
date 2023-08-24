@@ -9,9 +9,6 @@ import Loader from './Loader';
 // Interfaces TypeScript
 import { Generation, PokemonData } from '../../@types';
 
-// SCSS
-import '../../styles/index.scss';
-
 function App() {
   // Initialisation des states
   const [generationToFetch, setGenerationToFetch] = useState<

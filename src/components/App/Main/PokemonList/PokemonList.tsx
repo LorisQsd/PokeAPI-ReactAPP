@@ -58,7 +58,7 @@ export default function PokemonList({
     <>
       <button
         type="button"
-        className="refresh-list-btn"
+        className="shadow-3xl bg-slate-100 text-v-red-100 p-2 rounded-md text-xl transition duration-300 hover:bg-v-red-200 hover:text-slate-100 hover:scale-105 mb-3"
         onClick={() => setPokemonsData([])}
       >
         Vider la liste

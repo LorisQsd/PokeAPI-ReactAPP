@@ -16,4 +16,4 @@ Puis lancez la commande suivante pour lancer un serveur local avec vite :
 yarn dev
 ```
 
-Le projet sera ensuite accessible sur : http://localhost:5174/
+Le projet sera ensuite accessible sur : http://localhost:5173/ ou http://localhost:5173/

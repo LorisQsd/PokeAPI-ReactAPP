@@ -15,10 +15,10 @@ export default function PokemonList() {
 
   function handleClick(id: number) {
     setShowModal(true);
-    const filteredPokemon = pokemonsByGen.find(
+    const foundedPokemon = pokemonsByGen.find(
       (pokemonData) => pokemonData.pokedexId === id
     );
-    setPokemon(filteredPokemon as PokemonData);
+    setPokemon(foundedPokemon as PokemonData);
   }
 
   function handleKeyDown(

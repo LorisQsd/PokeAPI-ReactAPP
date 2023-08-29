@@ -12,7 +12,7 @@ import ModalListItem from './ModalListItem';
 import { ModalProps } from '../../../../@types';
 
 export default function Modal({ closeModal, pokemon }: ModalProps) {
-  const stats = [pokemon.stats].map((obj) => [...Object.entries(obj)])
+  const stats = [pokemon.stats].map((obj) => [...Object.entries(obj)]);
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLDialogElement>) {
     if (event.code === 'Escape') {

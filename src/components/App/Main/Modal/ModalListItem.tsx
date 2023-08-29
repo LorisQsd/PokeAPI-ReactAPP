@@ -1,6 +1,8 @@
 import { nanoid } from 'nanoid';
 
-import { ModalListItemProps } from '../../../../@types';
+interface ModalListItemProps {
+  stat: [string, number];
+}
 
 export default function ModalListItem({ stat }: ModalListItemProps) {
   const width = `${(stat[1] / 255) * 100}%`;

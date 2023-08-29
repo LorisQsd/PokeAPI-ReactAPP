@@ -8,8 +8,13 @@ import { nanoid } from 'nanoid';
 
 // Composants
 import ModalListItem from './ModalListItem';
+import { PokemonData } from '../../../../@types/pokemon';
 
-import { ModalProps } from '../../../../@types';
+interface ModalProps {
+  // Pas certain du typage pour cette fonction...
+  closeModal: () => void;
+  pokemon: PokemonData;
+}
 
 export default function Modal({ closeModal, pokemon }: ModalProps) {
   const stats = [pokemon.stats].map((obj) => [...Object.entries(obj)]);

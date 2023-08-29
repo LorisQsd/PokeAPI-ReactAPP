@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './components/App/App';
@@ -9,7 +8,7 @@ import { GenerationsButtonsProvider } from './components/contexts/GenerationsBut
 import { PokemonByGenProvider } from './components/contexts/PokemonsByGenContext';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // Commentaires temporaires pour éviter les doubles console.log
+  // Le React StrictMode est en commentaire pour éviter les doubles console.log
   // <React.StrictMode>
   <PokemonByGenProvider>
     <GenerationsButtonsProvider>

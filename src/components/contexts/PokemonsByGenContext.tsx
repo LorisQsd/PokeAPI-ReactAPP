@@ -30,10 +30,10 @@ const PokemonByGenContext = createContext<PokemonByGenType>({
 
 function PokemonByGenProvider({ children }: { children: ReactElement }) {
   const [generationToFetch, setGenerationToFetch] = useState(0);
-  const [pokemonsByGen, setPokemonsByGen] = useState<PokemonData[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [pokemonsByGen, setPokemonsByGen] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const pokemonsDatas = useMemo(() => {
+  const contextValues = useMemo(() => {
     const setGeneration = (generation: number) => {
       setPokemonsByGen([]); // On reset les datas de pokemonsByGen pour permettre l'affichage du loader
       setGenerationToFetch(generation);
@@ -76,7 +76,7 @@ function PokemonByGenProvider({ children }: { children: ReactElement }) {
   }, [generationToFetch]);
 
   return (
-    <PokemonByGenContext.Provider value={pokemonsDatas}>
+    <PokemonByGenContext.Provider value={contextValues}>
       {children}
     </PokemonByGenContext.Provider>
   );

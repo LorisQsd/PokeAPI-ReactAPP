@@ -5,6 +5,7 @@ import Message from './Message';
 
 // Interface TypeScript
 import { MainProps } from '../../../@types';
+import Loader from '../Loader';
 
 export default function Main({
   generationBtns,
@@ -22,7 +23,7 @@ export default function Main({
           setGenerationToFetch={setGenerationToFetch}
         />
       ) : (
-        <Message content="Erreur API - Pas de bouton à générer" />
+        <Loader />
       )}
       {/* Si mon state pokemonsData comprend au moins un pokemon c'est qu'il y a eu appel API, donc je peux afficher mon composant PokemonList */}
       {pokemonsData.length ? (

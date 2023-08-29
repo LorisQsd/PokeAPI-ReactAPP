@@ -10,7 +10,6 @@ import Loader from './Loader';
 import { Generation } from '../../@types';
 import { PokemonData } from '../../@types/pokemon';
 
-
 function App() {
   // Initialisation des states
   const [generationToFetch, setGenerationToFetch] = useState<
@@ -38,12 +37,14 @@ function App() {
         // Amélioration à faire concernant le typage
         const typedData: Generation[] = Object.values(data);
 
-        setGenerationBtns(typedData);
-
-        setIsLoading(false);
+        setTimeout(() => {
+          setGenerationBtns(typedData);
+        }, 1000);
       } catch (error) {
         // eslint-disable-next-line no-console
         console.trace(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -72,11 +73,11 @@ function App() {
         const typedData: PokemonData[] = Object.values(data);
 
         setPokemonsData(typedData);
-
-        setIsLoading(false);
       } catch (error) {
         // eslint-disable-next-line no-console
         console.trace(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 

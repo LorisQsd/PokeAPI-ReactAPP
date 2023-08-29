@@ -4,10 +4,10 @@ export interface Generation {
   to: number;
 }
 
-export interface PokemonListProps {
-  pokemonsData: PokemonData[];
-  setPokemonsData: React.Dispatch<React.SetStateAction<PokemonData[]>>;
-}
+// export interface PokemonListProps {
+//   pokemonsData: PokemonData[];
+//   setPokemonsData: React.Dispatch<React.SetStateAction<PokemonData[]>>;
+// }
 
 export interface ModalProps {
   closeModal: MouseEventHandler<HTMLDivElement>;

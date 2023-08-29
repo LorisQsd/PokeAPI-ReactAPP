@@ -15,7 +15,6 @@ function App() {
     number | undefined
   >(undefined);
   const [pokemonsData, setPokemonsData] = useState<PokemonData[]>([]);
-  // const [generationBtns, setGenerationBtns] = useState<Generation[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Appel API pour récupérer les datas des pokemons selon leur génération

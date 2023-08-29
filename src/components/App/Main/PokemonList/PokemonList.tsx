@@ -1,22 +1,21 @@
 // Composants
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Modal from '../Modal/Modal';
 
 // Interface Typescript
-import { PokemonListProps } from '../../../../@types';
 import { PokemonData } from '../../../../@types/pokemon';
+import { PokemonByGenContext } from '../../../context/PokemonsByGenContext';
 
-export default function PokemonList({
-  pokemonsData,
-  setPokemonsData,
-}: PokemonListProps) {
+export default function PokemonList() {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [pokemon, setPokemon] = useState<PokemonData | null>(null);
 
+  const { pokemonsByGen, clearPokemonsData } = useContext(PokemonByGenContext);
+
   function handleClick(id: number) {
     setShowModal(true);
-    const filteredPokemon = pokemonsData.find(
+    const filteredPokemon = pokemonsByGen.find(
       (pokemonData) => pokemonData.pokedexId === id
     );
     setPokemon(filteredPokemon as PokemonData);
@@ -32,7 +31,7 @@ export default function PokemonList({
   }
 
   // Pour chaque pokemon compris dans les datas de pokemonsData alors je créer un élément JSX
-  const items = pokemonsData.map((pokemonData) => (
+  const items = pokemonsByGen.map((pokemonData) => (
     <div
       role="tablist"
       key={pokemonData.pokedexId}
@@ -40,7 +39,7 @@ export default function PokemonList({
       onKeyDown={(event) => handleKeyDown(event, pokemonData.pokedexId)}
       tabIndex={0}
     >
-      <li className="bg-v-red-200 rounded-xl p-4 w-48 flex justify-center items-center flex-col gap-4 cursor-pointer transition duration-300 hover:scale-105">
+      <li className="flex flex-col items-center justify-center w-48 gap-4 p-4 transition duration-300 cursor-pointer bg-v-red-200 rounded-xl hover:scale-105">
         <img
           src={pokemonData.sprites.regular}
           alt={pokemonData.name.fr}
@@ -56,12 +55,12 @@ export default function PokemonList({
     <>
       <button
         type="button"
-        className="shadow-3xl bg-slate-100 text-v-red-100 p-2 rounded-md text-xl transition duration-300 hover:bg-v-red-200 hover:text-slate-100 hover:scale-105 mb-3"
-        onClick={() => setPokemonsData([])}
+        className="p-2 mb-3 text-xl transition duration-300 rounded-md shadow-3xl bg-slate-100 text-v-red-100 hover:bg-v-red-200 hover:text-slate-100 hover:scale-105"
+        onClick={clearPokemonsData}
       >
         Vider la liste
       </button>
-      <ul className="flex justify-center items-center gap-4 flex-wrap">
+      <ul className="flex flex-wrap items-center justify-center gap-4">
         {items}
       </ul>
       {showModal &&

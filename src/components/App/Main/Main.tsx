@@ -1,27 +1,35 @@
+import { useContext } from 'react';
 // Composants
 import GenerationBtns from './GenerationBtns/GenerationBtns';
 import PokemonList from './PokemonList/PokemonList';
 import Message from './Message';
 
 // Interface TypeScript
-import { MainProps } from '../../../@types';
+import { PokemonData } from '../../../@types/pokemon';
 import Loader from '../Loader';
+import { GenerationsButtonsContext } from '../../context/GenerationsButtons';
+
+interface MainProps {
+  setGenerationToFetch: React.Dispatch<
+    React.SetStateAction<number | undefined>
+  >;
+  pokemonsData: PokemonData[];
+  setPokemonsData: React.Dispatch<React.SetStateAction<PokemonData[]>>;
+}
 
 export default function Main({
-  generationBtns,
   setGenerationToFetch,
   pokemonsData,
   setPokemonsData,
 }: MainProps) {
+  const generationButtons = useContext(GenerationsButtonsContext);
+
   return (
     <main className="w-full py-3">
       {/* <Form /> */}
       {/* Si ma liste de bouton de génération a au moins un élément alors je peux afficher mon composant sinon j'affiche un message d'erreur */}
-      {generationBtns.length ? (
-        <GenerationBtns
-          generationBtns={generationBtns}
-          setGenerationToFetch={setGenerationToFetch}
-        />
+      {generationButtons.length ? (
+        <GenerationBtns setGenerationToFetch={setGenerationToFetch} />
       ) : (
         <Loader />
       )}

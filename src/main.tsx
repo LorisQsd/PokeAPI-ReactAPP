@@ -5,8 +5,8 @@ import App from './components/App/App';
 
 import './styles/index.scss';
 import './index.css';
-import { GenerationsButtonsProvider } from './components/context/GenerationsButtons';
-import { PokemonByGenProvider } from './components/context/PokemonsByGenContext';
+import { GenerationsButtonsProvider } from './components/contexts/GenerationsButtons';
+import { PokemonByGenProvider } from './components/contexts/PokemonsByGenContext';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // Commentaires temporaires pour éviter les doubles console.log

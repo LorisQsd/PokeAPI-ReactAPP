@@ -6,18 +6,17 @@ import Message from './Message';
 
 // Interface TypeScript
 import Loader from '../Loader';
-import { GenerationsButtonsContext } from '../../context/GenerationsButtons';
-import { PokemonByGenContext } from '../../context/PokemonsByGenContext';
+import { GenerationsButtonsContext } from '../../contexts/GenerationsButtons';
+import { PokemonByGenContext } from '../../contexts/PokemonsByGenContext';
 
 export default function Main() {
   const generationButtons = useContext(GenerationsButtonsContext);
-
   const { pokemonsByGen } = useContext(PokemonByGenContext);
 
   return (
     <main className="w-full py-3">
       {/* <Form /> */}
-      {/* Si ma liste de bouton de génération a au moins un élément alors je peux afficher mon composant sinon j'affiche un message d'erreur */}
+      {/* Si ma liste de bouton de génération a au moins un élément alors je peux afficher mon composant sinon j'affiche le Loader */}
       {generationButtons.length ? <GenerationBtns /> : <Loader />}
       {/* Si mon state pokemonsData comprend au moins un pokemon c'est qu'il y a eu appel API, donc je peux afficher mon composant PokemonList */}
       {pokemonsByGen.length ? (

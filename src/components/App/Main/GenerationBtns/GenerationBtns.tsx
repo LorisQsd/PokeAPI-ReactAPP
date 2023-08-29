@@ -1,15 +1,11 @@
 // Interfaces Typescript
 import { useContext } from 'react';
-import { GenerationsButtonsContext } from '../../../context/GenerationsButtons';
-import { PokemonByGenContext } from '../../../context/PokemonsByGenContext';
+import { GenerationsButtonsContext } from '../../../contexts/GenerationsButtons';
+import { PokemonByGenContext } from '../../../contexts/PokemonsByGenContext';
 
 export default function GenerationBtns() {
   const generationBtns = useContext(GenerationsButtonsContext);
   const { setGeneration } = useContext(PokemonByGenContext);
-  /** Gestionnaire d'event au click sur un bouton de génération -> Changement du state de GenerationToFetch */
-  // function handleClickGenerationBtn(btn: Generation) {
-  //   setGenerationToFetch(btn.generation);
-  // }
 
   // Pour chaque bouton compris dans ma liste des boutons de génération, alors je créer un élément JSX et j'ajoute un listener au click
   // NOTE : Il n'y a pas d'ID durable dans le temps, ici la key fait référence à la génération => amélioration à faire côté API

@@ -15,6 +15,8 @@ function GenerationsButtonsProvider({ children }: { children: ReactElement }) {
           'https://api-pokemon-fr.vercel.app/api/v1/gen'
         );
 
+        // eslint-disable-next-line no-console
+        console.log('Appel API - Boutons Generations');
         setGenerationBtns(data);
       } catch (error) {
         // eslint-disable-next-line no-console

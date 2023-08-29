@@ -5,13 +5,13 @@ import Modal from '../Modal/Modal';
 
 // Interface Typescript
 import { PokemonData } from '../../../../@types/pokemon';
-import { PokemonByGenContext } from '../../../context/PokemonsByGenContext';
+import { PokemonByGenContext } from '../../../contexts/PokemonsByGenContext';
 
 export default function PokemonList() {
+  const { pokemonsByGen, clearPokemonsData } = useContext(PokemonByGenContext);
+
   const [showModal, setShowModal] = useState<boolean>(false);
   const [pokemon, setPokemon] = useState<PokemonData | null>(null);
-
-  const { pokemonsByGen, clearPokemonsData } = useContext(PokemonByGenContext);
 
   function handleClick(id: number) {
     setShowModal(true);

@@ -12,7 +12,7 @@ function GenerationsButtonsProvider({ children }: { children: ReactElement }) {
     async function fetchGenerationsButtons() {
       try {
         const { data } = await axios.get(
-          'https://api-pokemon-fr.vercel.app/api/v1/gen'
+          'https://tyradex.vercel.app/api/v1/gen'
         );
 
         // eslint-disable-next-line no-console

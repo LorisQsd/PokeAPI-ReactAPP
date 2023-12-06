@@ -59,7 +59,7 @@ function PokemonByGenProvider({ children }: { children: ReactElement }) {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `https://api-pokemon-fr.vercel.app/api/v1/gen/${generationToFetch}`
+          `https://tyradex.vercel.app/api/v1/gen/${generationToFetch}`
         );
 
         // eslint-disable-next-line no-console
